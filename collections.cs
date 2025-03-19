@@ -11,6 +11,7 @@ class Program
     {
         bool exit = false;
 
+        // Main loop for the system to operate with.
         while (!exit)
         {
             Console.WriteLine("\n--- Dictionary Menu ---");
@@ -60,9 +61,9 @@ class Program
     static void PopulateDictionary()
     {
         myDictionary.Clear();  // Start fresh each time
-        myDictionary.Add("Fruit", new List<string> { "Apple", "Banana", "Mango" });
-        myDictionary.Add("Vegetable", new List<string> { "Carrot", "Broccoli" });
-        myDictionary.Add("Beverage", new List<string> { "Water", "Juice" });
+        myDictionary.Add("Fruit", new List<string> { "Apple", "Banana", "Mango", "Orange", "Kiwi" });
+        myDictionary.Add("Vegetable", new List<string> { "Carrot", "Broccoli", "Cabbage", "Eggplant" });
+        myDictionary.Add("Beverage", new List<string> { "Water", "Juice", "Soda", "Coffee" });
 
         Console.WriteLine("Dictionary populated successfully with sample data.");
     }
@@ -87,17 +88,17 @@ class Program
     // c. Remove a specified key
     static void RemoveKey()
     {
-        Console.Write("Enter the key you want to remove: ");
+        Console.Write("Enter the key that you would want to remove: ");
         string key = Console.ReadLine();
 
         if (myDictionary.ContainsKey(key))
         {
             myDictionary.Remove(key);
-            Console.WriteLine($"Key '{key}' removed successfully.");
+            Console.WriteLine($"Key '{key}' removal has been successfully.");
         }
         else
         {
-            Console.WriteLine($"Key '{key}' does not exist.");
+            Console.WriteLine($"Key '{key}' This does not exist.");
         }
     }
 
@@ -109,11 +110,11 @@ class Program
 
         if (myDictionary.ContainsKey(key))
         {
-            Console.WriteLine($"Key '{key}' already exists. Use option 5 to add value to it.");
+            Console.WriteLine($"Key '{key}' This already exists. Please use option 5 to add value to it.");
             return;
         }
 
-        Console.Write("Enter the value to add: ");
+        Console.Write("Enter the value that needs to be added: ");
         string value = Console.ReadLine();
 
         myDictionary[key] = new List<string> { value };
@@ -128,7 +129,7 @@ class Program
 
         if (myDictionary.ContainsKey(key))
         {
-            Console.Write("Enter value to add: ");
+            Console.Write("Enter the value to add: ");
             string value = Console.ReadLine();
             myDictionary[key].Add(value);
             Console.WriteLine($"Value '{value}' added to key '{key}'.");

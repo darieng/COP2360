@@ -151,7 +151,7 @@ class Program
 
         Console.WriteLine("\n--- Sorted Dictionary Keys ---");
         var sortedKeys = myDictionary.Keys.OrderBy(k => k).ToList();
-        foreach (var key in sortedKeys)
+        foreach (var key in sortedKeys) 
         {
             Console.WriteLine(key);
         }
